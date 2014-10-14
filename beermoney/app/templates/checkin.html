@@ -1,10 +1,19 @@
 <html>
     <head>
         <title>{{title}} - beermoney</title>
+        <style>
+            input[type="text"]{
+                width: 200px;
+            }
+        </style>
     </head>
     <body>
         <h1>find beers. cheap as fuck.</h1>
-        <input placeholder="where are you?" type="text" />
-        <input placeholder="what're you drinkin?" type="text" />
+        <form id="beerIt" action="/checkin/drink/" method="get">
+            <input name="location" placeholder="where are you?" type="text" />
+            <input name="drink" placeholder="what're you drinkin?" type="text" />
+            $<input name="price" placeholder="how much is that shit?" type="number" />
+            <button type="submit">bling bling</button>
+        </form>
     </body>
 </html>
