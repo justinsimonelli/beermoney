@@ -5,6 +5,7 @@ class CheckIn(db.Model):
     location = db.Column(db.String(256), index=True)
     drink = db.Column(db.String(256), index=True)
     cost = db.Column(db.String(25), index=True)
+    timestamp = db.Column(db.DateTime)
 
-    #define a __repr__ (aka toString) so we know that the fuck
-    #is being inserted (via debug or console)
+    def __repr__(self):
+        return '<CheckIn id=%r, drink=%r>' % (self.id, self.drink)

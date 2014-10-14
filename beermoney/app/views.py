@@ -1,6 +1,7 @@
 from app import app
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from app import checkInDAO
+import jsonpickle
 
 @app.route('/')
 @app.route('/index')
@@ -14,16 +15,15 @@ def checkIt():
                            title="get drunk. save cash.")
 
  #make this a GET request for now so we can be lazy and use query params
-@app.route('/checkin/drink', methods=['GET'])
-@app.route('/checkin/drink/', methods=['GET'])
+@app.route('/checkin/drink', methods=['GET', 'POST'])
+@app.route('/checkin/drink/', methods=['GET', 'POST'])
 def saveCheckIn():
-    _location = request.args.get('location', '')
-    _drink = request.args.get('drink', '')
-    _price = request.args.get('price', '')
+    #try request.get_json() instead?
+    _location = request.args.get('location', None)
+    _drink = request.args.get('drink', None)
+    _price = request.args.get('price', None)
 
     _checkin = checkInDAO.saveCheckIn(_location, _drink, _price)
     _allCheckins = checkInDAO.getAllCheckins()
 
-    return render_template('checkinSuccess.html',
-                               checkin = _checkin,
-                               allCheckins = _allCheckins)
+    return render_template('checkinSuccess.html', checkin = _checkin, allCheckins = _allCheckins)
