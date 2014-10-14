@@ -6,9 +6,25 @@
         <h1>nice checkin!</h1>
         <div class="checkin-success">
              <h2>let's see what we've got here..</h2>
-             <p>location: {{location}}</p>
-             <p>drink: {{drink}}</p>
-             <p>cost: ${{cost}}</p>
+             <p>location: {{checkin.location}}</p>
+             <p>drink: {{checkin.drink}}</p>
+             <p>cost: ${{checkin.cost}}</p>
+            <hr />
+        </div>
+        <div class="all">
+            <h1>all check-ins:</h1>
+            <hr />
+            <div class="all-checkins">
+                <h3>past checkins:</h3>
+                {%for check in allCheckins %}
+                    <div class="chek">
+                        <p>location: {{check.location}}</p>
+                        <p>drink: {{check.drink}}</p>
+                        <p>cost: {{check.cost}}</p>
+                    </div>
+                    <hr />
+                {%endfor %}
+            </div>
         </div>
     </body>
 </html>

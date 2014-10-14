@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request
+from app import checkInDAO
 
 @app.route('/')
 @app.route('/index')
@@ -20,7 +21,9 @@ def saveCheckIn():
     _drink = request.args.get('drink', '')
     _price = request.args.get('price', '')
 
+    _checkin = checkInDAO.saveCheckIn(_location, _drink, _price)
+    _allCheckins = checkInDAO.getAllCheckins()
+
     return render_template('checkinSuccess.html',
-                               location = _location,
-                               drink = _drink,
-                               cost = _price)
+                               checkin = _checkin,
+                               allCheckins = _allCheckins)

@@ -3,5 +3,7 @@ lib/*
 bin/*
 beermoney/lib/*
 beermoney/bin/*
+beermoney/db*
 *.pyc
 *.cfg
+*.db
