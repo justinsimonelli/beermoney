@@ -1,0 +1,6 @@
+flask
+flask-sqlalchemy
+sqlalchemy-migrate
+flask-whooshalchemy
+flask-wtf
+jsonpickle
