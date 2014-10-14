@@ -1,0 +1,7 @@
+/.idea/*
+lib/*
+bin/*
+beermoney/lib/*
+beermoney/bin/*
+*.pyc
+*.cfg
