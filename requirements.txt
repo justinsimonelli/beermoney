@@ -1,6 +1,10 @@
+virtualenv
 flask
 flask-sqlalchemy
 sqlalchemy-migrate
 flask-whooshalchemy
 flask-wtf
 jsonpickle
+python-social-auth
+flask-login
+flask-openid

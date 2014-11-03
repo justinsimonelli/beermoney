@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>{{title}} - beermoney</title>
+        <style>
+            input[type="text"]{
+                width: 350px;
+                clear:both;
+            }
+            label{
+                font-size:32px;
+                clear:both;
+            }
+            #errors{
+                position:absolute;
+                z-index: 100;
+                list-style-type: none;
+            }
+            #errors ul{
+                list-style-type: none;
+            }
+        </style>
+        {% block header%}{% endblock %}
+    </head>
+    <body>
+        <div id="errors">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul>
+                {% for message in messages %}
+                    <li>{{ message }} </li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>

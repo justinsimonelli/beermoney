@@ -1,19 +1,17 @@
-<html>
-    <head>
-        <title>{{title}} - beermoney</title>
-        <style>
-            input[type="text"]{
-                width: 200px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>find beers. cheap.</h1>
+{% extends "base.html" %}
+    {% block content %}
+        {% if user %}
+            <h1>what're we drinkin tonight {{user.nickname}}</h1>
+        {% else %}
+            <h1>find beers. cheap.</h1>
+        {% endif %}
         <form id="beerIt" action="/checkin/drink/" method="get">
-            <input name="location" placeholder="where are you?" type="text" />
-            <input name="drink" placeholder="what're you drinkin?" type="text" />
-            $<input name="price" placeholder="how much is that shit?" type="number" />
+            <label for="location">where are you?</label>
+                <input name="location" type="text" />
+            <label for="drink">what're you drinkin?</label>
+                <input name="drink" type="text" />
+            <label for="price">how much is that shit?</label>
+                $<input name="" type="number" />
             <button type="submit">bling bling</button>
         </form>
-    </body>
-</html>
+    {% endblock %}
