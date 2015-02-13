@@ -1,17 +1,25 @@
 {% extends "base.html" %}
     {% block content %}
-        {% if user %}
-            <h1>what're we drinkin tonight {{user.nickname}}</h1>
-        {% else %}
-            <h1>find beers. cheap.</h1>
-        {% endif %}
-        <form id="beerIt" action="/checkin/drink/" method="get">
-            <label for="location">where are you?</label>
-                <input name="location" type="text" />
-            <label for="drink">what're you drinkin?</label>
-                <input name="drink" type="text" />
-            <label for="price">how much is that shit?</label>
-                $<input name="" type="number" />
-            <button type="submit">bling bling</button>
-        </form>
+        <div id="checkin-container">
+            {% if user %}
+                <h1>what're we drinkin tonight {{user.nickname}}?</h1>
+            {% else %}
+                <h1>find beers. cheap.</h1>
+            {% endif %}
+            <form id="beerIt" action="/checkin/drink/" method="get">
+                <div class="info">
+                    <label for="location">where are you?</label>
+                    <input name="location" type="text" />
+                </div>
+               <div class="info">
+                   <label for="drink">what're you drinkin?</label>
+                   <input name="drink" type="text" />
+               </div>
+               <div class="info">
+                   <label for="price">how much is it?</label>
+                   $<input name="" type="text" pattern="\d*" />
+               </div>
+                <button type="submit">bling bling</button>
+            </form>
+        </div>
     {% endblock %}

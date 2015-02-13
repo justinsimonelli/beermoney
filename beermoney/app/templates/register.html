@@ -6,17 +6,19 @@
       <div class="login-body"></div>{# not used for anything but styling! #}
       <div class="grad"></div>{# not used for anything but styling! #}
       <br>
-      <form action="/login/" method="post" name="login">
-          <div class="header">
+      <form action="/register/" method="post" name="register">
+          <div class="header register">
             <div>beer<span>money</span></div>
+            <div id="who">who are ya?</div>
           </div>
           {{ form.hidden_tag() }}
-                <div class="login">
+                <div class="register">
+                        {{ form.email(placeholder="email",size=150) }}
                         {{ form.username(placeholder="username",size=80) }}
                         {{ form.password(placeholder="password",size=80) }}
-                        <input id="submitter" type="submit" value="Login">
-                        <a id="register" href="/register/">Register</a>
-                        <a id="foursquare" href="{{foursquare}}"></a>
+                </div>
+                <div id="register">
+                    <input type="submit" value="Register" />
                 </div>
       </form>
   </div>

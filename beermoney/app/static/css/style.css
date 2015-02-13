@@ -1,0 +1,285 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+body{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 12px;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding:15px;
+}
+
+#checkin-container label,
+#checkin-container h1,
+#list-container label,
+#list-container h1{
+    font-family: 'Exo', sans-serif;
+    font-size: 35px;
+    font-weight: 200;
+    color: #C68E17 !important;
+}
+
+#submitter,
+#register,
+#foursquare{
+    z-index:2;
+}
+
+
+.header div{
+        float: left;
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 35px;
+        font-weight: 200;
+        color: #C68E17 !important;
+ }
+
+.header div span{
+    color: #FFFFFF !important;
+}
+
+    #errors li{
+        list-style:none;
+    }
+
+/******************************
+** LOGIN SECTION
+*******************************/
+
+@media screen and (min-width: 641px){
+    .header{
+        position: absolute;
+        top: calc(50% - 35px);
+        left: calc(50% - 255px);
+        z-index: 2;
+    }
+
+    .header.register{
+        position: absolute;
+        top: calc(42% - 35px);
+        left: calc(50% - 255px);
+        z-index: 2;
+    }
+
+    .header.register #who{
+        float:left;
+        clear: both;
+    }
+
+    .login,
+    .register{
+        position: absolute;
+        top: calc(50% - 75px);
+        left: calc(50% - 50px);
+        height: auto;
+        width: 300px;
+        padding: 10px;
+        z-index: 2;
+        margin: 4px;
+    }
+    #register{
+        height: auto;
+        width: auto;
+        padding: 10px;
+    }
+    #foursquare{
+        width: 300px;
+        height: 46px;
+        margin-top: 15%;
+        background-image: url(/static/images/foursquare@2x.png);
+        display: block;
+    }
+
+    #errors{
+        float: left;
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 4.5em;
+        font-weight: 200;
+        top: calc(31% - 184px);
+        width: 100%;
+        z-index: 10;
+        padding: 10px;
+        display: block;
+        position: absolute;
+    }
+
+}
+
+/** mobile **/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+    .header{
+        position: absolute;
+        top: calc(50% - 115px);
+        left: calc(34% - 44px);
+        z-index: 2;
+    }
+
+    .login{
+        position: absolute;
+        top: calc(50% - 75px);
+        left: calc(34% - 50px);
+        height: 150px;
+        width: 350px;
+        padding: 10px;
+        z-index: 2;
+    }
+
+    #register, #foursquare{
+        height: 150px;
+        width: 350px;
+        padding: 10px;
+    }
+
+    #errors{
+        float: left;
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 5.5em;
+        font-weight: 200;
+        top: calc(10% - 184px);
+        width: 100%;
+        z-index: 10;
+        display: block;
+    }
+
+}
+
+    .login-body,
+    .register-body{
+        position: absolute;
+        top: -120px;
+        left: -20px;
+        right: -40px;
+        bottom: -40px;
+        width: auto;
+        height: auto;
+        background-image: url(/static/images/beers-closeup.jpg);
+        background-size: cover;
+        -webkit-filter: blur(2.4px);
+        z-index: 0;
+    }
+
+    .grad{
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -40px;
+        bottom: -40px;
+        width: auto;
+        height: auto;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+        z-index: 1;
+        opacity: 0.7;
+    }
+
+    .login input[type=text],
+    .register input[type=text]{
+        width: 300px;
+        height: 46px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.6);
+        border-radius: 2px;
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 2.5em;
+        font-weight: 400;
+        padding: 4px;
+    }
+
+    .login input[type=password],
+    .register input[type=password]{
+        width: 300px;
+        height: 46px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.6);
+        border-radius: 2px;
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 2.5em;
+        font-weight: 400;
+        padding: 4px;
+        margin-top: 10px;
+    }
+
+    #submitter{
+        width: 300px;
+        height: 46px;
+        border: 1px solid #fff;
+        cursor: pointer;
+        border-radius: 2px;
+        color: #a18d6c;
+        font-family: 'Exo', sans-serif;
+        font-size: 2.5em;
+        font-weight: 400;
+        padding: 6px;
+        margin-top: 10px;
+    }
+
+    #register{
+        width: 286px;
+        height: 35px;
+        border: 1px solid #fff;
+        cursor: pointer;
+        border-radius: 2px;
+        color: #a18d6c;
+        font-family: 'Exo', sans-serif;
+        font-size: 2.5em;
+        text-align: center;
+        font-weight: 400;
+        padding: 6px;
+        margin-top: 10px;
+        text-decoration: none;
+        display: block;
+    }
+
+    #submitter:hover{
+        opacity: 0.8;
+    }
+
+    #submitter:active{
+        opacity: 0.6;
+    }
+
+    .login input[type=text]:focus,
+    .register input[type=text]:focus{
+        outline: none;
+        border: 1px solid rgba(255,255,255,0.9);
+    }
+
+    .login input[type=password]:focus,
+    .register input[type=password]:focus{
+        outline: none;
+        border: 1px solid rgba(255,255,255,0.9);
+    }
+
+    #submitter:focus{
+        outline: none;
+    }
+
+    ::-webkit-input-placeholder{
+       color: rgba(255,255,255,0.6);
+    }
+
+    ::-moz-input-placeholder{
+       color: rgba(255,255,255,0.6);
+    }
+    input[type="text"]{
+        width: 350px;
+        clear:both;
+    }
+    label{
+        font-size:32px;
+        clear:both;
+    }

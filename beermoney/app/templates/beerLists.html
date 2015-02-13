@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+    {% block content %}
+        <div id="list-container">
+            <header>
+                <h1>Beer Lists</h1>
+            </header>
+            <div id="lists">
+                <section id="add">
+                    <button>Add a list</button>
+                </section>
+                <section class="list">
+                    <form>
+                        <input type="text" class="date" name="date" placeholder="pick a date">
+                        <input type="text" class="beer" name="beer" placeholder="pick a beer">
+                    </form>
+                </section>
+            </div>
+
+        </div>
+    {% endblock %}
+
+<script class="list-entry-template" type="text/x-handlebars-template">
+  <div class="entry">
+    <h1>{{title}}</h1>
+    <div class="body">
+      {{body}}
+    </div>
+  </div>
+</script>
