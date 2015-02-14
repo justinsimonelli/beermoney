@@ -76,7 +76,8 @@ body{
     }
 
     .login,
-    .register{
+    .register,
+    .search-results{
         position: absolute;
         top: calc(50% - 75px);
         left: calc(50% - 50px);
