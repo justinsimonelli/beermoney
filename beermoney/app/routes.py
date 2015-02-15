@@ -5,6 +5,7 @@ from .models import User
 from app import app, db, lm, beerMoneyDAO, f_client, login_serializer
 from .utils import flash_errors
 from itsdangerous import BadSignature, BadData
+import json
 
 @app.before_request
 def before_request():
@@ -105,7 +106,7 @@ def logout():
 @app.route('/oauth/foursquare')
 @app.route('/oauth/foursquare/')
 def foursquare_auth():
-    code = request.args.get('code')
+    code = str(request.args.get('code'))
     access_token = f_client.oauth.get_token(code)
     f_client.set_access_token(access_token)
     f_user = f_client.users()
@@ -132,26 +133,15 @@ def foursquare_search():
         print('inside POST')
 
     elif request.method == 'GET':
-        f_user = f_client.users()
-        venues = f_client.venues.search(params={
+
+        response = f_client.venues.search(params={
             'near': 'avon lake,ohio',
             'query': request.args.get('q'),
             'limit': 25
         })
 
-        venue_dict = {}
+        return render_template('results.html', venues=response['venues']);
 
-        #for venue in venues:
-         #   venue_data = {'venue': {
-          #      'id': venue.id,
-           #     'name': venue.name,
-            #    'location': venue.location
-            #}}
-            #venue_dict.update(venue_data)
-
-
-        #return json.dumps(venue_dict)
-        return "still working on it"
 
 ############################################
 #MAKE THIS login_required again!!!!#########

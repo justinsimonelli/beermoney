@@ -1,0 +1,22 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<div id="login-container">
+    <div class="login-body"></div>{# not used for anything but styling! #}
+    <div class="grad"></div>{# not used for anything but styling! #}
+    <br>
+    <div class="header register">
+        <div>beer<span>money</span></div>
+    </div>
+    <div class="search-results">
+        <ul>
+            {% for venue in venues %}
+            <li>{{venue.name}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -61,7 +61,7 @@ class CheckIn(db.Model):
     cost = db.Column(db.String(25), index=True)
     dateInserted = db.Column(db.DateTime)
     dateUpdated = db.Column(db.DateTime)
-    userId = db.Column(db.Integer, db.ForeignKey('user.id'))
+    userId = db.Column(db.Integer, db.ForeignKey('users.id'))
 
 
     @property
